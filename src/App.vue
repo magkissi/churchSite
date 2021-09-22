@@ -35,5 +35,6 @@ export default {
   top: 0;
   bottom: 0;
   z-index: 6;
+  height: 96px;
 }
 </style>

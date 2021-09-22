@@ -5,8 +5,8 @@
       'md h-24 flex align-center text-white pt-10',
     ]"
   >
-    <div class=" flex ml-10">
-      <img class="h-12 w-16" src="/img/logo.png" />
+    <div class=" flex items-center ml-10">
+      <img class="w-10 h-10" src="/img/logo.png" />
       <span class="text-sm ml-1">
         <p class="text-lg font-bold">LEGON</p>
         <p class="text-xs">SEVENTH DAY ADVENTIST</p>
@@ -51,17 +51,19 @@ export default {
 
 <style scoped>
 .change_color {
-  background: #3a7bd5; /*fallback for old browsers */
+  background: #0f0c29; /* fallback for old browsers */
   background: -webkit-linear-gradient(
-    to right,
-    #3a6073,
-    #3a7bd5
-  ); /* Chrome 10-25, Safari 5.1-6*/
+    to top,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to right,
-    #3a6073,
-    #3a7bd5
-  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    to top,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 ul li {

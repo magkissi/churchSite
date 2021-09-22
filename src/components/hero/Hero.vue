@@ -6,6 +6,7 @@
         :autoplayHoverPause="true"
         :autoplay="true"
         :loop="true"
+        :speed="800"
       >
         <slide class="slide" v-for="hero in heroes" :key="hero.id">
           <img :src="`http://localhost:1337${hero.background.url}`" />

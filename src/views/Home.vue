@@ -27,8 +27,67 @@
         :image="`http://localhost:1337${homeSection.image.url}`"
       />
     </div>
-
+    <div class="department flex flex-col w-full">
+      <span class="text-5xl pt-16 pb-16 text-center">Leadership</span>
+      <div class="flex ml-10">
+        <Leaders
+          name="nhtferdcv"
+          department="nhbgdfter"
+          src="/img/worship.jpg"
+        />
+        <div>
+          <p class="mr-16">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />Est
+            perferendis, maiores tempore doloribus et architecto aliquid
+            voluptatem minus quidem. Consequuntur aperiam debitis nulla
+            <br />exercitationem! Eius impedit id enim quibusdam dolor.
+          </p>
+          <div class="w-32 mt-4"><Button text="See More" /></div>
+        </div>
+        <Leaders
+          name="nhtferdcv"
+          department="nhbgdfter"
+          src="/img/worship.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="sermon flex flex-col justify-center items-center w-full mt-44 mb-44"
+    >
+      <div class="flex w-full justify-between">
+        <p class="text-5xl ml-40 mb-16">Sermons</p>
+        <p class="mr-40">
+          Explore & listen to the latest seermons by our church’s pastors added
+          daily and available<br />
+          for download in all popular formats.
+        </p>
+      </div>
+      <div class="flex">
+        <Sermon
+          src="/img/table.jpg"
+          title="The Lord is my sheperd"
+          date="20/09/2021"
+        />
+      </div>
+    </div>
     <OnlineService />
+    <div class="consult flex flex-col justify-center items-center">
+      <div class="flex w-full justify-between pl-72 pr-96 mb-6">
+        <div class="text-4xl">FREE CONSULTATION</div>
+        <div class="writting2">Get an appointment with our Pastor</div>
+      </div>
+
+      <div class="flex">
+        <div><Input name="name" placeholder="Your Name" /></div>
+        <div class="input pl-9 pr-9">
+          <Input name="email" placeholder="Your E-mail" />
+        </div>
+        <div>
+          <Input name="phone" placeholder="Your phone number" />
+        </div>
+        <div class="pl-9 w-60"><Button text="Make an appointment" /></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -39,6 +98,10 @@ import Hero from "../components/hero/Hero.vue";
 import { mapState, mapActions } from "vuex";
 import Feed from "../components/hero/Feed.vue";
 import OnlineService from "../components/hero/OnlineService.vue";
+import Input from "../components/input/Input.vue";
+import Button from "../components/button/Button.vue";
+import Leaders from "../components/leaders/Leaders.vue";
+import Sermon from "../components/sermons/Sermon.vue";
 
 export default {
   name: "Home",
@@ -46,6 +109,10 @@ export default {
     Hero,
     Feed,
     OnlineService,
+    Input,
+    Button,
+    Leaders,
+    Sermon,
   },
   created() {
     this.getHomeSections();
@@ -101,5 +168,20 @@ export default {
   padding-left: 15px;
   border-left: 3px solid rgb(212, 166, 150);
   font-size: 30px;
+}
+.consult {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  height: 300px;
+  color: #ffff;
+  background: #1a1a3b;
+}
+.writting2 {
+  color: rgba(138, 136, 136, 0.6);
+  font-size: 25px;
+}
+.department {
+  background: #1a1a3b;
+  color: #ffff;
 }
 </style>

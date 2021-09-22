@@ -4,27 +4,33 @@
       <div class="text">
         <h2 class="mb-6 text-4xl font-bold">{{ title }}</h2>
         <p>{{ description }}</p>
+        <div class="w-32 mt-8"><Button text="Read More" /></div>
       </div>
       <div class="image h-96 mb-20 ml-48">
         <img class="w-full h-full" :src="image" />
       </div>
     </div>
 
-    <div v-if="flip" class="flex w-full justify-center">
-      <div class="image h-96 mb-20 mr-48">
+    <div v-if="flip" class="flex w-full">
+      <div class="image h-96 mb-20 mr-48 -mt-12">
         <img class="w-full h-full" :src="image" />
       </div>
       <div class="text">
         <h2 class="mb-6 text-4xl font-bold">{{ title }}</h2>
         <p>{{ description }}</p>
+        <div class="w-32 mt-8"><Button text="Read More" /></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Button from "../button/Button.vue";
 export default {
   name: "Feed",
+  components: {
+    Button,
+  },
   props: {
     flip: {
       type: Boolean,
