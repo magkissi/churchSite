@@ -1,24 +1,44 @@
 <template>
   <div class="container">
     <div v-if="!flip" class="flex w-full">
-      <div class="text">
+      <div
+        data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        class="text"
+      >
         <h2 class="mb-6 text-4xl font-bold">{{ title }}</h2>
         <p>{{ description }}</p>
         <div class="w-32 mt-8"><Button text="Read More" /></div>
       </div>
-      <div class="image h-96 mb-20 ml-48">
+      <div
+        data-aos="fade-left"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        class="image h-96 mb-20 ml-48"
+      >
         <img class="w-full h-full" :src="image" />
       </div>
     </div>
 
     <div v-if="flip" class="flex w-full">
-      <div class="image h-96 mb-20 mr-48 -mt-12">
+      <div
+        data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        class="image h-96 mb-20 mr-48 -mt-12"
+      >
         <img class="w-full h-full" :src="image" />
       </div>
-      <div class="text">
+      <div
+        data-aos="fade-left"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        class="text"
+      >
         <h2 class="mb-6 text-4xl font-bold">{{ title }}</h2>
         <p>{{ description }}</p>
-        <div class="w-32 mt-8"><Button text="Read More" /></div>
+        <div class="w-32 -mt-8"><Button text="Read More" /></div>
       </div>
     </div>
   </div>
@@ -49,31 +69,13 @@ export default {
   padding-left: 50px;
   padding-right: 80px;
   position: relative;
-  animation: leftMove ease-out;
-  animation-duration: 2s;
 }
-@keyframes leftMove {
-  from {
-    left: 0;
-  }
-  to {
-    left: 50px;
-  }
-}
+
 .image {
   width: 50%;
   position: relative;
-  animation: rightMove 2s;
 }
-@keyframes rightMove {
-  from {
-    opacity: 0;
-    transform: scale(0.7, 0.7);
-  }
-  to {
-    opacity: 1;
-  }
-}
+
 .container {
   background: rgba(226, 224, 224, 0.3);
 }

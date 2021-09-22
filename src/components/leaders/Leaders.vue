@@ -1,5 +1,10 @@
 <template>
-  <div class="container position relative w-full">
+  <div
+    data-aos="flip-left"
+    data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000"
+    class="container position relative w-full"
+  >
     <div class="absolute z-10 text-white mt-72 ml-10">
       <p class="text-3xl">{{ name }}</p>
       <p class="text-lg">{{ position }}</p>
