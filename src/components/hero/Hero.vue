@@ -9,7 +9,11 @@
         :speed="800"
       >
         <slide class="slide" v-for="hero in heroes" :key="hero.id">
-          <img :src="`http://localhost:1337${hero.background.url}`" />
+          <img
+            :src="
+              `https://quiet-inlet-64588.herokuapp.com${hero.background.url}`
+            "
+          />
           <div class="overlay">
             <h1 class="text-4xl font-bold">{{ hero.title }}</h1>
             <p class="text-xl">{{ hero.subtitle }}</p>

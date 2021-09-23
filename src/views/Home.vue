@@ -24,7 +24,7 @@
         :flip="(index + 1) % 2 == 0"
         :title="homeSection.title"
         :description="homeSection.description"
-        :image="`http://localhost:1337${homeSection.image.url}`"
+        :image="`https://quiet-inlet-64588.herokuapp.com${homeSection.image.url}`"
       />
     </div>
     <div class="department flex flex-col w-full">
