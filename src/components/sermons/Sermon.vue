@@ -1,5 +1,5 @@
 <template>
-  <div class="container w-96 h-96 ml-10">
+  <div class=" flex container w-96 h-96 ml-10">
     <carousel
       :per-page="1"
       :autoplayHoverPause="true"
