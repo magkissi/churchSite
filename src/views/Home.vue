@@ -24,7 +24,9 @@
         :flip="(index + 1) % 2 == 0"
         :title="homeSection.title"
         :description="homeSection.description"
-        :image="`https://quiet-inlet-64588.herokuapp.com${homeSection.image.url}`"
+        :image="
+          `https://quiet-inlet-64588.herokuapp.com${homeSection.image.url}`
+        "
       />
     </div>
     <div class="department flex flex-col w-full">
@@ -62,11 +64,11 @@
           for download in all popular formats.
         </p>
       </div>
-      <div class="flex">
+      <div v-for="sermon in sermons" :key="sermon.id" class="flex">
         <Sermon
-          src="/img/table.jpg"
-          title="The Lord is my sheperd"
-          date="20/09/2021"
+          :src="`https://quiet-inlet-64588.herokuapp.com${sermon.image.url}`"
+          :title="sermon.title"
+          :date="sermon.date"
         />
       </div>
     </div>
@@ -116,15 +118,18 @@ export default {
   },
   created() {
     this.getHomeSections();
+    this.getSermons();
   },
   methods: {
     ...mapActions({
-      getHomeSections: "hero/getHomeSections",
+      getHomeSections: "home/getHomeSections",
+      getSermons: "home/getSermons",
     }),
   },
   computed: {
     ...mapState({
-      homeSections: (state) => state.hero.homeSections,
+      homeSections: (state) => state.home.homeSections,
+      sermons: (state) => state.home.sermons,
     }),
   },
 };

@@ -16,3 +16,13 @@ export const fetchHomeSections = async () => {
   const response = await axios.get(`${process.env.VUE_APP_API_URL}/Sections`);
   return response.data;
 };
+
+export const fetchHomeLeaders = async () => {
+  const response = await axios.get(`${process.env.VUE_APP_API_URL}/Leaders`);
+  return response.data;
+};
+
+export const fetchSermons = async () => {
+  const response = await axios.get(`${process.env.VUE_APP_API_URL}/Sermons`);
+  return response.data;
+};

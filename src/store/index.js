@@ -1,7 +1,7 @@
 import Vuex from "vuex";
 import Vue from "vue";
 import catInfo from "./modules/catInfo";
-import hero from "./modules/hero";
+import home from "./modules/home";
 
 // load Vuex
 Vue.use(Vuex);
@@ -10,6 +10,6 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   modules: {
     catInfo,
-    hero,
+    home,
   },
 });

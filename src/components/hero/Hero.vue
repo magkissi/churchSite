@@ -39,12 +39,12 @@ export default {
   },
   methods: {
     ...mapActions({
-      getHeroes: "hero/getHeroes",
+      getHeroes: "home/getHeroes",
     }),
   },
   computed: {
     ...mapState({
-      heroes: (state) => state.hero.heroes,
+      heroes: (state) => state.home.heroes,
     }),
   },
 };
