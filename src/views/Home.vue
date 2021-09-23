@@ -24,9 +24,7 @@
         :flip="(index + 1) % 2 == 0"
         :title="homeSection.title"
         :description="homeSection.description"
-        :image="
-          `https://quiet-inlet-64588.herokuapp.com${homeSection.image.url}`
-        "
+        :image="`${url}${homeSection.image.url}`"
       />
     </div>
     <div class="department flex flex-col w-full">
@@ -66,7 +64,7 @@
       </div>
       <div v-for="sermon in sermons" :key="sermon.id" class="flex">
         <Sermon
-          :src="`https://quiet-inlet-64588.herokuapp.com${sermon.image.url}`"
+          :src="`${url}${sermon.image.url}`"
           :title="sermon.title"
           :date="sermon.date"
         />
@@ -119,6 +117,11 @@ export default {
   created() {
     this.getHomeSections();
     this.getSermons();
+  },
+  data() {
+    return {
+      url: process.env.VUE_APP_API_URL,
+    };
   },
   methods: {
     ...mapActions({
