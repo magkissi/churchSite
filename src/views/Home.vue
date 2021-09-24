@@ -24,7 +24,7 @@
         :flip="(index + 1) % 2 == 0"
         :title="homeSection.title"
         :description="homeSection.description"
-        :image="`${url}${homeSection.image.url}`"
+        :image="homeSection.image.url"
       />
     </div>
     <div class="department flex flex-col w-full">
@@ -64,7 +64,8 @@
       </div>
       <div v-for="sermon in sermons" :key="sermon.id" class="flex">
         <Sermon
-          :src="`${url}${sermon.image.url}`"
+          :src="sermon.image.url"
+          :alt="sermon.image.name"
           :title="sermon.title"
           :date="sermon.date"
         />
@@ -118,11 +119,7 @@ export default {
     this.getHomeSections();
     this.getSermons();
   },
-  data() {
-    return {
-      url: process.env.VUE_APP_API_URL,
-    };
-  },
+
   methods: {
     ...mapActions({
       getHomeSections: "home/getHomeSections",
@@ -192,4 +189,8 @@ export default {
   background: #1a1a3b;
   color: #ffff;
 }
+/* .sermon {
+  display: grid;
+  grid-template-columns: auto auto auto;
+} */
 </style>
