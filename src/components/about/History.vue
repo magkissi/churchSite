@@ -33,7 +33,7 @@
     </div>
     <div class="flex  flex-col w-full items-center mt-32 mb-20">
       <div class="text-4xl text-gray-400 mb-12">
-        Some Famous Adventists of OLd
+        Some Famous Adventists of Old
       </div>
       <div class="flex">
         <img class="w-52" src="/img/Desmond_Doss.jpg" alt="" />
