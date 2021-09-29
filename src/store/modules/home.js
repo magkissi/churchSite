@@ -1,9 +1,15 @@
-import { fetchHeroes, fetchHomeSections, fetchSermons } from "../../api";
+import {
+  fetchHeroes,
+  fetchHomeLeaders,
+  fetchHomeSections,
+  fetchSermons,
+} from "../../api";
 
 const state = {
   heroes: [],
   homeSections: [],
   sermons: [],
+  leaders: [],
 };
 
 const getters = {};
@@ -26,6 +32,12 @@ const actions = {
 
     commit("setSermons", response);
   },
+
+  async getLeaders({ commit }) {
+    const response = await fetchHomeLeaders();
+
+    commit("setLeaders", response);
+  },
 };
 
 const mutations = {
@@ -39,6 +51,10 @@ const mutations = {
 
   setSermons(state, sermons) {
     state.sermons = sermons;
+  },
+
+  setLeaders(state, leaders) {
+    state.leaders = leaders;
   },
 };
 

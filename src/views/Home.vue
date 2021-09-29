@@ -29,26 +29,32 @@
     </div>
     <div class="department flex flex-col w-full">
       <span class="text-5xl pt-16 pb-16 text-center">Leadership</span>
-      <div class="flex ml-10">
-        <Leaders
-          name="nhtferdcv"
-          department="nhbgdfter"
-          src="/img/worship.jpg"
-        />
+
+      <div class="flex justify-between mt-14">
+        <div class="ml-16">
+          <Leaders
+            :name="leaders[0].name"
+            :position="leaders[0].topic"
+            :src="leaders[0].image[0].url"
+          />
+        </div>
+
         <div>
-          <p class="mr-16">
+          <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />Est
-            perferendis, maiores tempore doloribus et architecto aliquid
+            perferendis, maiores tempore doloribus et architecto <br />aliquid
             voluptatem minus quidem. Consequuntur aperiam debitis nulla
             <br />exercitationem! Eius impedit id enim quibusdam dolor.
           </p>
           <div class="w-32 mt-4"><Button text="See More" /></div>
         </div>
-        <Leaders
-          name="nhtferdcv"
-          department="nhbgdfter"
-          src="/img/worship.jpg"
-        />
+        <div class="mr-16">
+          <Leaders
+            :name="leaders[1].name"
+            :position="leaders[1].topic"
+            :src="leaders[1].image[0].url"
+          />
+        </div>
       </div>
     </div>
     <div
@@ -62,13 +68,15 @@
           for download in all popular formats.
         </p>
       </div>
-      <div v-for="sermon in sermons" :key="sermon.id" class="flex">
-        <Sermon
-          :src="sermon.image.url"
-          :alt="sermon.image.name"
-          :title="sermon.title"
-          :date="sermon.date"
-        />
+      <div class="flex">
+        <div v-for="sermon in sermons" :key="sermon.id">
+          <Sermon
+            :src="sermon.image[0].url"
+            :alt="sermon.image.name"
+            :title="sermon.title"
+            :date="sermon.date"
+          />
+        </div>
       </div>
     </div>
     <OnlineService />
@@ -103,6 +111,7 @@ import Input from "../components/input/Input.vue";
 import Button from "../components/button/Button.vue";
 import Leaders from "../components/leaders/Leaders.vue";
 import Sermon from "../components/sermons/Sermon.vue";
+// import { Carousel, Slide } from "vue-carousel";
 
 export default {
   name: "Home",
@@ -114,22 +123,27 @@ export default {
     Button,
     Leaders,
     Sermon,
+    // Carousel,
+    // Slide,
   },
   created() {
     this.getHomeSections();
     this.getSermons();
+    this.getLeaders();
   },
 
   methods: {
     ...mapActions({
       getHomeSections: "home/getHomeSections",
       getSermons: "home/getSermons",
+      getLeaders: "home/getLeaders",
     }),
   },
   computed: {
     ...mapState({
       homeSections: (state) => state.home.homeSections,
       sermons: (state) => state.home.sermons,
+      leaders: (state) => state.home.leaders,
     }),
   },
 };

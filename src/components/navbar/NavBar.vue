@@ -2,7 +2,7 @@
   <div
     :class="[
       { change_color: scrollPosition > 50 },
-      'md h-24 flex align-center text-white pt-10',
+      'md h-24 flex  text-white pt-10',
     ]"
   >
     <div class=" flex items-center ml-10">
@@ -13,29 +13,89 @@
         <p class="text-xs">CHURCH</p>
       </span>
     </div>
-    <div class="ml-12 text-xs font-bold">
-      <ul>
-        <router-link to="/"><li>HOME</li></router-link>
-        <router-link to="/about">
-          <li class="">ABOUT US +</li>
-        </router-link>
-        <li class="modal">LEADERSHIP +</li>
-        <li class="modal">MINISTRIES +</li>
-        <li class="modal">MISSIONS +</li>
-        <li class="modal">MEDIA +</li>
-        <li class="modal">CONTACT US +</li>
-      </ul>
+    <div class="flex justify-center items-center ml-20 text-xs font-bold te">
+      <router-link to="/"><div class="pb-5">HOME</div></router-link>
+
+      <div
+        class="flex flex-col ml-5 mr-5 relative pb-5"
+        @mouseover="details1 = true"
+        @mouseleave="details1 = false"
+      >
+        <div class="cursor-pointer">
+          ABOUT US +
+        </div>
+
+        <span v-show="details1" class=" mt-5 absolute">
+          <Modal
+            item1="History"
+            item2="Fundamental Belifs"
+            item3="Core Values"
+            item4="Statistics"
+            item5="Activities"
+          />
+        </span>
+      </div>
+
+      <div
+        class="flex flex-col relative pb-5"
+        @mouseover="details2 = true"
+        @mouseleave="details2 = false"
+      >
+        LEADERSHIP +
+        <span class="mt-5 absolute" v-show="details2">
+          <Modal
+            item1="General Conference"
+            item2="Union"
+            item3="District"
+            item4="Local"
+          />
+        </span>
+      </div>
+      <div
+        class="flex flex-col relative ml-5 mr-5 pb-5"
+        @mouseover="details3 = true"
+        @mouseleave="details3 = false"
+      >
+        MINISTRIES +
+        <span class="mt-5 absolute" v-show="details3">
+          <Modal
+            item1="Personal Ministry"
+            item2="Children"
+            item3="Sabbath School"
+            item4="Home and Family life"
+            item5="Youth Ministry"
+            item6="Women and ladies Ministry"
+            item7="Men's Ministry"
+          />
+        </span>
+      </div>
+
+      <div
+        class="flex flex-col relative ml-5 mr-5 pb-5"
+        @mouseover="details3 = true"
+        @mouseleave="details3 = false"
+      >MEDIA +
+      
+      </div>
+      <div class="ml-5 mr-5 pb-5">CONTACT US +</div>
     </div>
   </div>
 </template>
 
 <script>
+import Modal from "../modal/Modal.vue";
 export default {
   name: "NavBar",
+  components: {
+    Modal,
+  },
 
   data() {
     return {
       scrollPosition: null,
+      details1: false,
+      details2: false,
+      details3: false,
     };
   },
   mounted() {
@@ -66,9 +126,9 @@ export default {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-ul li {
-  display: inline;
-  padding: 20px;
-  cursor: pointer;
+.modal {
+  left: 350px;
+  top: 60px;
+  right: 0;
 }
 </style>

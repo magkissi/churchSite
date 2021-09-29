@@ -1,6 +1,8 @@
 <template>
-  <div class="w-36 h-auto border-solid border-4 bg-gray-400">
-    <p>{{ item1 }}</p>
+  <div class="w-36 h-auto border-solid border-1 bg-gray-200 p-2 text-black">
+    <router-link to="/about"
+      ><p>{{ item1 }}</p></router-link
+    >
     <p>{{ item2 }}</p>
     <p>{{ item3 }}</p>
     <p>{{ item4 }}</p>
@@ -27,6 +29,7 @@ export default {
     item8: String,
     item9: String,
     item10: String,
+    path: String,
   },
 };
 </script>

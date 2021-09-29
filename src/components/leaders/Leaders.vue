@@ -9,6 +9,7 @@
       <p class="text-3xl">{{ name }}</p>
       <p class="text-lg">{{ position }}</p>
     </div>
+
     <div class="position">
       <img class="w-96 h-96" :src="src" alt="" />
     </div>

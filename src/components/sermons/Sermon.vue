@@ -3,8 +3,11 @@
     <img class="h-52 w-full mb-7" :src="src" :alt="alt" />
 
     <p class="title ml-5 text-2xl mt-2 mb-10">{{ title }}</p>
+    <div class="border ml-36"></div>
     <div class="w-20 ml-5 mb-3"><Button text="view" /></div>
-    <p class="ml-5 text-xs">{{ date }}</p>
+    <strong
+      ><p class="ml-5 text-xs">{{ date }}</p></strong
+    >
   </div>
 </template>
 

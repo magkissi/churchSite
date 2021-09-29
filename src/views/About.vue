@@ -1,28 +1,23 @@
 <template>
-  <div class="about">
-    <h1>Legon SDA church</h1>
-    <div v-for="category in categories" v-bind:key="category.id">
-      {{ category.infos[0].title }}
+  <div class="about mb-32">
+    <div class="pt-48">
+      <History />
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-
+import History from "../components/about/History.vue";
+// import { historyText } from "../utils";
 export default {
-  created() {
-    this.getCategories();
-  },
-  methods: {
-    ...mapActions({
-      getCategories: "catInfo/getCategories",
-    }),
-  },
-  computed: {
-    ...mapState({
-      categories: (state) => state.catInfo.categories,
-    }),
+  name: "About",
+  components: {
+    History,
   },
 };
 </script>
+<style scoped>
+.about {
+  background: #16162b;
+}
+</style>

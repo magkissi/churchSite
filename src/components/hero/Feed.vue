@@ -38,7 +38,7 @@
       >
         <h2 class="mb-6 text-4xl font-bold">{{ title }}</h2>
         <p>{{ description }}</p>
-        <div class="w-32 -mt-8"><Button text="Read More" /></div>
+        <div class="w-32 mt-8"><Button text="Read More" /></div>
       </div>
     </div>
   </div>
