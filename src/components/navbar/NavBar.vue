@@ -5,7 +5,7 @@
       'md h-24 flex  text-white pt-10',
     ]"
   >
-    <div class=" flex items-center ml-10">
+    <div class=" flex items-center ml-10 mb-5">
       <img class="w-10 h-10" src="/img/logo.png" />
       <span class="text-sm ml-1">
         <p class="text-lg font-bold">LEGON</p>
@@ -74,8 +74,8 @@
         class="flex flex-col relative ml-5 mr-5 pb-5"
         @mouseover="details3 = true"
         @mouseleave="details3 = false"
-      >MEDIA +
-      
+      >
+        MEDIA +
       </div>
       <div class="ml-5 mr-5 pb-5">CONTACT US +</div>
     </div>

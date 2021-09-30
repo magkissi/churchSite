@@ -6,7 +6,7 @@
     class="container position relative w-full"
   >
     <div class="absolute z-10 text-white mt-72 ml-10">
-      <p class="text-3xl">{{ name }}</p>
+      <p class="text-3xl">{{ leaderName }}</p>
       <p class="text-lg">{{ position }}</p>
     </div>
 
@@ -21,7 +21,7 @@ export default {
   name: "Leaders",
   props: {
     src: String,
-    name: String,
+    leaderName: String,
     position: String,
   },
 };

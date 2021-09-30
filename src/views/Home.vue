@@ -31,9 +31,9 @@
       <span class="text-5xl pt-16 pb-16 text-center">Leadership</span>
 
       <div class="flex justify-between mt-14">
-        <div class="ml-16">
+        <div v-if="leaders.length !== 0" class="ml-16">
           <Leaders
-            :name="leaders[0].name"
+            :leaderName="leaders[0].name"
             :position="leaders[0].topic"
             :src="leaders[0].image[0].url"
           />
@@ -48,9 +48,9 @@
           </p>
           <div class="w-32 mt-4"><Button text="See More" /></div>
         </div>
-        <div class="mr-16">
+        <div v-if="leaders.length !== 0" class="mr-16">
           <Leaders
-            :name="leaders[1].name"
+            :leaderName="leaders[1].name"
             :position="leaders[1].topic"
             :src="leaders[1].image[0].url"
           />
