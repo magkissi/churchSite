@@ -1,43 +1,39 @@
 <template>
-  <div class="bg-image w-full">
-    <img class="w-full" src="/img/worship.jpg" alt="" />
+  <div class="container w-full">
+    <img class="bg-image w-full" src="/img/worship.jpg" alt="" />
 
     <div class="overlay">
-      <p class="text-center text-5xl font-extrabold mt-6">
+      <div class="text-lg text-center lg:text-5xl font-extrabold mt-6">
         He shall feed his flock like a shepherd; <br />he shall gather the lambs
         with his arms, <br />and carry them in his bosom, <br />and shall gently
         lead those that are with young
 
-        <br /><span class="text-2xl font-bold">Isaiah 40:11</span>
-      </p>
+        <br />
+        <div class="text-2xl font-light">Isaiah 40:11</div>
+      </div>
 
-      <div class="flex justify-between p-28 mb-16">
-        <div class="flex flex-col">
-          <span class="text-black bg-white p-2 ml-12 font-bold text-2xl w-40"
-            >JOIN OUR</span
-          >
-          <span class="online font-extrabold ">ONLINE <br /></span>
-
-          <span class="text-4xl font-extrabold">STREAMING <br /></span>
-          <span class="text-4xl">SERVICES </span>
-          <div class="flex text-sm">
-            <img class="w-6" src="/img/fb-icon.jpg" alt="" />
-            <div class="border-r-2 ml-2 mr-2"></div>
-            <a href="https://web.facebook.com/legonsda/videos"
-              ><p>@legonsda</p></a
-            >
-          </div>
-          <div class=" flex mt-3 text-sm">
-            <img class="w-6" src="/img/ytube-icon.jpg" alt="" />
-            <div class="border-r-2 ml-2 mr-2"></div>
-            <a
-              href="https://www.youtube.com/channel/UCfe8JJSXUsGQ3ZddGD8ARJw/videos"
-              ><p>Legon SDA Church</p></a
-            >
-          </div>
+      <div class="mt-16 flex flex-col w-full items-center lg:p-28 mb-16">
+        <div class="text-lg text-black bg-white p-2 font-bold lg:text-2xl w-28">
+          JOIN OUR
         </div>
-        <div class="">
-          <img class="h-72" src="/img/table.jpg" alt="" />
+        <div class="online font-extrabold ">ONLINE <br /></div>
+
+        <div class="text-4xl font-extrabold">STREAMING <br /></div>
+        <div class="text-4xl">SERVICES</div>
+        <div class="flex text-sm">
+          <img class="w-6" src="/img/fb-icon.jpg" alt="" />
+          <div class="border-r-2 ml-2 mr-2"></div>
+          <a href="https://web.facebook.com/legonsda/videos"
+            ><p>@legonsda</p></a
+          >
+        </div>
+        <div class=" flex mt-3 text-sm">
+          <img class="w-6" src="/img/ytube-icon.jpg" alt="" />
+          <div class="border-r-2 ml-2 mr-2"></div>
+          <a
+            href="https://www.youtube.com/channel/UCfe8JJSXUsGQ3ZddGD8ARJw/videos"
+            ><p>Legon SDA Church</p></a
+          >
         </div>
       </div>
     </div>
@@ -47,11 +43,13 @@
 <script></script>
 
 <style scoped>
-.bg-image {
+.container {
   position: relative;
   z-index: 1;
 }
-
+.bg-image {
+  height: 600px;
+}
 .overlay {
   position: absolute;
   left: 0;

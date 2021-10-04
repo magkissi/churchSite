@@ -1,24 +1,25 @@
 <template>
-  <div class="home-container flex flex-col">
+  <div class="home-container lg:flex flex-col">
     <div class="line h-line text-white">
-      <p class="location ml-80">
-        Legon, Accra 23321 Accra, Ghana <br />
-        <span class="hours text-lg font-normal"
-          >Meeting Hours :
-          <span class="text-sm"
-            >Saturday - Sabbath Woship: 9am - 12:30pm | Wednessday - Prayer
-            Meeting: 7pm - 8:00pm | Friday - Youth Hour: 7pm - 8:30pm</span
-          ></span
-        >
-      </p>
+      <div class="location font-bold ml-3">
+        <div class="text-sm lg:text-3xl">Legon, Accra 23321 Accra, Ghana</div>
+        <div class="hours text-xs font-normal lg:text-xl">
+          Meeting Hours :
+          <div class="text-sm lg:text-sm">
+            Saturday - Sabbath Woship : 9am - 12:30pm <br />Wednessday - Prayer
+            Meeting : 7pm - 8:00pm <br />Friday - Youth Hour : 7pm - 8:30pm
+          </div>
+        </div>
+      </div>
     </div>
     <div class="line v-line"></div>
     <div class="hero"><Hero /></div>
-    <div class="writting">
-      Our church incorporates God’s family into our fellowship. <br />We provide
-      a warm, authentic community, welcoming new <br />believers into the body
-      of Christ through baptism
+    <div class="text-lg ml-3 mt-12 mb-12 pl-3 writting">
+      Our church incorporates God’s family into <br />our fellowship. We provide
+      a warm, <br />authentic community, welcoming new <br />believers into the
+      body of Christ <br />through baptism
     </div>
+
     <div v-for="(homeSection, index) in homeSections" :key="index">
       <Feed
         :flip="(index + 1) % 2 == 0"
@@ -27,11 +28,11 @@
         :image="homeSection.image.url"
       />
     </div>
-    <div class="department flex flex-col w-full">
+    <div class="leaders flex flex-col w-full">
       <span class="text-5xl pt-16 pb-16 text-center">Leadership</span>
 
-      <div class="flex justify-between mt-14">
-        <div v-if="leaders.length !== 0" class="ml-16">
+      <div class="flex flex-col items-center lg:flex lg:justify-between">
+        <div v-if="leaders.length !== 0" class="">
           <Leaders
             :leaderName="leaders[0].name"
             :position="leaders[0].topic"
@@ -39,16 +40,16 @@
           />
         </div>
 
-        <div>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />Est
-            perferendis, maiores tempore doloribus et architecto <br />aliquid
+        <div class=" flex flex-col items-center">
+          <div class="p-2">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
+            perferendis, maiores tempore doloribus et architecto aliquid
             voluptatem minus quidem. Consequuntur aperiam debitis nulla
-            <br />exercitationem! Eius impedit id enim quibusdam dolor.
-          </p>
+            exercitationem! Eius impedit id enim quibusdam dolor.
+          </div>
           <div class="w-32 mt-4"><Button text="See More" /></div>
         </div>
-        <div v-if="leaders.length !== 0" class="mr-16">
+        <div v-if="leaders.length !== 0" class="mt-16">
           <Leaders
             :leaderName="leaders[1].name"
             :position="leaders[1].topic"
@@ -57,19 +58,16 @@
         </div>
       </div>
     </div>
-    <div
-      class="sermon flex flex-col justify-center items-center w-full mt-44 mb-44"
-    >
-      <div class="flex w-full justify-between">
-        <p class="text-5xl ml-40 mb-16">Sermons</p>
-        <p class="mr-40">
+    <div class="flex flex-col items-center w-full mt-12 mb-44">
+      <div class="flex w-auto justify-between">
+        <div class="text-5xl mb-16">Sermons</div>
+        <div class="lg:mr-40">
           Explore & listen to the latest seermons by our church’s pastors added
-          daily and available<br />
-          for download in all popular formats.
-        </p>
+          daily.
+        </div>
       </div>
-      <div class="flex">
-        <div v-for="sermon in sermons" :key="sermon.id">
+      <div class="grid grid-cols-2 gap-4 lg:flex">
+        <div class="mb-5" v-for="sermon in sermons" :key="sermon.id">
           <Sermon
             :src="sermon.image[0].url"
             :alt="sermon.image.name"
@@ -80,21 +78,23 @@
       </div>
     </div>
     <OnlineService />
-    <div class="consult flex flex-col justify-center items-center">
-      <div class="flex w-full justify-between pl-72 pr-96 mb-6">
-        <div class="text-4xl">FREE CONSULTATION</div>
+    <div class="consult flex flex-col">
+      <div
+        class="flex w-full lg:justify-between lg:pl-72 lg:pr-96 mb-12 mt-16 p-3"
+      >
+        <div class="text-2xl lg:text-4xl">FREE CONSULTATION</div>
         <div class="writting2">Get an appointment with our Pastor</div>
       </div>
 
-      <div class="flex">
-        <div><Input name="name" placeholder="Your Name" /></div>
-        <div class="input pl-9 pr-9">
+      <div class="flex flex-col items-center lg:flex">
+        <div class="w-72"><Input name="name" placeholder="Your Name" /></div>
+        <div class="w-72 mt-10 mb-10">
           <Input name="email" placeholder="Your E-mail" />
         </div>
-        <div>
+        <div class="w-72">
           <Input name="phone" placeholder="Your phone number" />
         </div>
-        <div class="pl-9 w-60"><Button text="Make an appointment" /></div>
+        <div class="w-72 mt-10"><Button text="Make an appointment" /></div>
       </div>
     </div>
   </div>
@@ -151,6 +151,7 @@ export default {
 
 <style scoped>
 .home-container {
+  width: 100%;
   position: relative;
 }
 
@@ -177,34 +178,23 @@ export default {
 }
 .location {
   margin-top: 520px;
-  font-size: 25px;
-  font-weight: 600;
 }
 .writting {
-  margin-top: 80px;
-  margin-bottom: 100px;
-  margin-left: 150px;
-  padding-left: 15px;
   border-left: 3px solid rgb(212, 166, 150);
-  font-size: 30px;
 }
 .consult {
+  height: 100vh;
   margin-top: 100px;
   margin-bottom: 100px;
-  height: 300px;
   color: #ffff;
   background: #1a1a3b;
 }
 .writting2 {
   color: rgba(138, 136, 136, 0.6);
-  font-size: 25px;
+  font-size: 15px;
 }
-.department {
+.leaders {
   background: #1a1a3b;
   color: #ffff;
 }
-/* .sermon {
-  display: grid;
-  grid-template-columns: auto auto auto;
-} */
 </style>

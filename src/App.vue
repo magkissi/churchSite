@@ -21,6 +21,11 @@ export default {
 </script>
 
 <style>
+@media screen and (max-width: 731px) {
+  #app {
+    width: 100%;
+  }
+}
 #app {
   position: relative;
   font-family: Avenir, Helvetica, Arial, sans-serif;

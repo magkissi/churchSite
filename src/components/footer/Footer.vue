@@ -6,7 +6,9 @@
         <p class="text-sm font-bold">LESDAC</p>
       </div>
 
-      <div class="elements text-sm font-bold mt-12 mb-12 ml-32 mr-32 pb-7 ">
+      <div
+        class="elements text-sm font-bold mt-12 mb-12 lg:ml-32 lg:mr-32 pb-7 "
+      >
         <ul>
           <li class="modal">Home</li>
           <li class="modal">Departments</li>
@@ -15,10 +17,10 @@
           <li class="modal">Contact Us</li>
         </ul>
       </div>
-      <div class="elements ml-72 mr-72 mb-12 pb-7 text-2xl">
-        Call Us <br /><br /><span class="phone">+233 2255 481 458</span>
+      <div class="elements lg:ml-72 lg:mr-72 mb-12 pb-7 text-2xl">
+        Call Us <br /><br /><span class="phone text-3xl">+233 255 481 458</span>
       </div>
-      <p>Legon, Accra 23321 Accra, Ghana</p>
+      <p class="pt-32">Legon, Accra 23321 Accra, Ghana</p>
       <p class="privacy">@ Lesdac 2021. All rights reserved. Privacy Policy</p>
     </div>
   </div>
@@ -37,7 +39,7 @@ export default {
 }
 ul li {
   display: inline;
-  padding: 20px;
+  padding: 5px;
   cursor: pointer;
 }
 .elements {
@@ -45,7 +47,6 @@ ul li {
 }
 .phone {
   color: rgb(212, 166, 150);
-  font-size: 50px;
 }
 .privacy {
   color: rgba(138, 136, 136, 0.5);

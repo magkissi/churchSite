@@ -1,32 +1,32 @@
 <template>
   <div class="container">
-    <div v-if="!flip" class="flex w-full">
+    <div v-if="!flip" class="flex flex-col w-full lg:flex">
       <div
         data-aos="fade-right"
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
-        class="text"
       >
-        <h2 class="mb-6 text-4xl font-bold">{{ title }}</h2>
-        <p>{{ description }}</p>
-        <div class="w-32 mt-8"><Button text="Read More" /></div>
+        <div class="mb-6 text-4xl font-bold text-center">{{ title }}</div>
+        <div class="p-2">{{ description }}</div>
+        <div class="flex justify-center mt-8 mb-5">
+          <div class="w-32 "><Button text="Read More" /></div>
+        </div>
       </div>
       <div
         data-aos="fade-left"
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
-        class="image h-96 mb-20 ml-48"
+        class="image h-96 mb-20"
       >
-        <img class="w-full h-full" :src="image" />
+        <img class="resize w-full h-full" :src="image" />
       </div>
     </div>
-
-    <div v-if="flip" class="flex w-full">
+    <div v-if="flip" class="flex flex-col w-full lg:flex">
       <div
         data-aos="fade-right"
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
-        class="image h-96 mb-20 mr-48 -mt-12"
+        class="image h-96 mb-20 mr-48 mt-12 w-full"
       >
         <img class="w-full h-full" :src="image" />
       </div>
@@ -34,11 +34,12 @@
         data-aos="fade-left"
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
-        class="text"
       >
-        <h2 class="mb-6 text-4xl font-bold">{{ title }}</h2>
-        <p>{{ description }}</p>
-        <div class="w-32 mt-8"><Button text="Read More" /></div>
+        <div class="mb-6 text-4xl font-bold text-center">{{ title }}</div>
+        <div class="p-2">{{ description }}</div>
+        <div class="flex justify-center mt-8 mb-5">
+          <div class="w-32 "><Button text="Read More" /></div>
+        </div>
       </div>
     </div>
   </div>
@@ -65,14 +66,10 @@ export default {
 
 <style scoped>
 .text {
-  width: 40%;
-  padding-left: 50px;
-  padding-right: 80px;
   position: relative;
 }
 
 .image {
-  width: 50%;
   position: relative;
 }
 

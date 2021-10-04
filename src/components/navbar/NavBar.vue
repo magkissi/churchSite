@@ -2,10 +2,10 @@
   <div
     :class="[
       { change_color: scrollPosition > 50 },
-      'md h-24 flex  text-white pt-10',
+      'resize-nav h-24 flex  text-white pt-10',
     ]"
   >
-    <div class=" flex items-center ml-10 mb-5">
+    <div class="resize-logo flex items-center ml-10 mb-5">
       <img class="w-10 h-10" src="/img/logo.png" />
       <span class="text-sm ml-1">
         <p class="text-lg font-bold">LEGON</p>
@@ -13,11 +13,13 @@
         <p class="text-xs">CHURCH</p>
       </span>
     </div>
-    <div class="flex justify-center items-center ml-20 text-xs font-bold te">
-      <router-link to="/"><div class="pb-5">HOME</div></router-link>
+    <div
+      class="flex flex-col lg:flex lg:justify-center items-center ml-20 text-xs font-bold"
+    >
+      <router-link to="/"><div class="resize-text pb-5">HOME</div></router-link>
 
       <div
-        class="flex flex-col ml-5 mr-5 relative pb-5"
+        class="resize-text flex flex-col ml-5 mr-5 relative pb-5"
         @mouseover="details1 = true"
         @mouseleave="details1 = false"
       >
@@ -37,7 +39,7 @@
       </div>
 
       <div
-        class="flex flex-col relative pb-5"
+        class="resize-text flex flex-col relative pb-5"
         @mouseover="details2 = true"
         @mouseleave="details2 = false"
       >
@@ -52,7 +54,7 @@
         </span>
       </div>
       <div
-        class="flex flex-col relative ml-5 mr-5 pb-5"
+        class="resize-text flex flex-col relative ml-5 mr-5 pb-5"
         @mouseover="details3 = true"
         @mouseleave="details3 = false"
       >
@@ -71,7 +73,7 @@
       </div>
 
       <div
-        class="flex flex-col relative ml-5 mr-5 pb-5"
+        class="resize-text flex flex-col relative ml-5 mr-5 pb-5"
         @mouseover="details3 = true"
         @mouseleave="details3 = false"
       >
@@ -110,6 +112,22 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 731px) {
+  .resize-nav {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 731px) {
+  .resize-text {
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 731px) {
+  .resize-logo {
+    margin-left: 8px;
+  }
+}
 .change_color {
   background: #0f0c29; /* fallback for old browsers */
   background: -webkit-linear-gradient(

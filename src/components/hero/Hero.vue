@@ -10,9 +10,9 @@
       >
         <slide class="slide" v-for="hero in heroes" :key="hero.id">
           <img :src="hero.background.url" />
-          <div class="overlay">
-            <h1 class="text-4xl font-bold">{{ hero.title }}</h1>
-            <p class="text-xl">{{ hero.subtitle }}</p>
+          <div class="overlay pl-3 lg:pl-40">
+            <div class="text-xl font-bold lg:text-3xl">{{ hero.title }}</div>
+            <div class="text-sm lg:text-xl">{{ hero.subtitle }}</div>
           </div>
         </slide>
       </carousel>
@@ -64,7 +64,6 @@ img {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   padding-top: 200px;
-  padding-left: 320px;
 }
 .slide {
   position: relative;
