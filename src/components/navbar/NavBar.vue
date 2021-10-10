@@ -13,9 +13,7 @@
         <p class="text-xs">CHURCH</p>
       </span>
     </div>
-    <div
-      class="flex flex-col lg:flex lg:justify-center items-center ml-20 text-xs font-bold"
-    >
+    <div class="flex justify-center items-center ml-20 text-xs font-bold">
       <router-link to="/"><div class="resize-text pb-5">HOME</div></router-link>
 
       <div

@@ -10,7 +10,7 @@
       >
         <slide class="slide" v-for="hero in heroes" :key="hero.id">
           <img :src="hero.background.url" />
-          <div class="overlay pl-3 lg:pl-40">
+          <div class="overlay pl-3 lg:pl-80">
             <div class="text-xl font-bold lg:text-3xl">{{ hero.title }}</div>
             <div class="text-sm lg:text-xl">{{ hero.subtitle }}</div>
           </div>

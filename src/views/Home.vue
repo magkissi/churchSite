@@ -2,8 +2,10 @@
   <div class="home-container lg:flex flex-col">
     <div class="line h-line text-white">
       <div class="location font-bold ml-3">
-        <div class="text-sm lg:text-3xl">Legon, Accra 23321 Accra, Ghana</div>
-        <div class="hours text-xs font-normal lg:text-xl">
+        <div class="text-sm lg:text-3xl lg:ml-80">
+          Legon, Accra 23321 Accra, Ghana
+        </div>
+        <div class="hours text-xs font-normal lg:text-xl lg:ml-80">
           Meeting Hours :
           <div class="text-sm lg:text-sm">
             Saturday - Sabbath Woship : 9am - 12:30pm <br />Wednessday - Prayer
@@ -14,10 +16,12 @@
     </div>
     <div class="line v-line"></div>
     <div class="hero"><Hero /></div>
-    <div class="text-lg ml-3 mt-12 mb-12 pl-3 writting">
-      Our church incorporates God’s family into <br />our fellowship. We provide
-      a warm, <br />authentic community, welcoming new <br />believers into the
-      body of Christ <br />through baptism
+    <div
+      class="text-lg ml-3 mt-12 mb-12 pl-3 writting lg:ml-72 lg:text-2xl lg:w-2/4"
+    >
+      Our church incorporates God’s family into our fellowship. We provide a
+      warm, authentic community, welcoming new believers into the body of Christ
+      through baptism
     </div>
 
     <div v-for="(homeSection, index) in homeSections" :key="index">
@@ -31,7 +35,7 @@
     <div class="leaders flex flex-col w-full">
       <span class="text-5xl pt-16 pb-16 text-center">Leadership</span>
 
-      <div class="flex flex-col items-center lg:flex lg:justify-between">
+      <div class=" lg:justify-center lg:flex">
         <div v-if="leaders.length !== 0" class="">
           <Leaders
             :leaderName="leaders[0].name"
@@ -40,8 +44,8 @@
           />
         </div>
 
-        <div class=" flex flex-col items-center">
-          <div class="p-2">
+        <div class=" flex flex-col items-center lg:w-96">
+          <div class="p-2 lg:ml-16 lg:mr-16">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
             perferendis, maiores tempore doloribus et architecto aliquid
             voluptatem minus quidem. Consequuntur aperiam debitis nulla
@@ -49,7 +53,7 @@
           </div>
           <div class="w-32 mt-4"><Button text="See More" /></div>
         </div>
-        <div v-if="leaders.length !== 0" class="mt-16">
+        <div v-if="leaders.length !== 0" class="mt-16 lg:mt-0">
           <Leaders
             :leaderName="leaders[1].name"
             :position="leaders[1].topic"
@@ -61,7 +65,7 @@
     <div class="flex flex-col items-center w-full mt-12 mb-44">
       <div class="flex w-auto justify-between">
         <div class="text-5xl mb-16">Sermons</div>
-        <div class="lg:mr-40">
+        <div class="lg:mr-40 lg:ml-40 lg:mt-4">
           Explore & listen to the latest seermons by our church’s pastors added
           daily.
         </div>
@@ -78,23 +82,25 @@
       </div>
     </div>
     <OnlineService />
-    <div class="consult flex flex-col">
+    <div class="consult flex flex-col items-center w-full lg:h-96">
       <div
-        class="flex w-full lg:justify-between lg:pl-72 lg:pr-96 mb-12 mt-16 p-3"
+        class="flex w-full lg:justify-between lg:pl-72 lg:pr-96 mb-12  mt-16 p-3"
       >
         <div class="text-2xl lg:text-4xl">FREE CONSULTATION</div>
         <div class="writting2">Get an appointment with our Pastor</div>
       </div>
 
-      <div class="flex flex-col items-center lg:flex">
+      <div class="items-center lg:flex lg:justify-center ">
         <div class="w-72"><Input name="name" placeholder="Your Name" /></div>
-        <div class="w-72 mt-10 mb-10">
+        <div class="w-72 mt-8 mb-8 lg:ml-10 lg:mr-10">
           <Input name="email" placeholder="Your E-mail" />
         </div>
         <div class="w-72">
           <Input name="phone" placeholder="Your phone number" />
         </div>
-        <div class="w-72 mt-10"><Button text="Make an appointment" /></div>
+        <div class="w-72 mt-8 mb-8 lg:mt-0 lg:ml-10">
+          <Button text="Make an appointment" color="#302b63" />
+        </div>
       </div>
     </div>
   </div>
@@ -183,14 +189,13 @@ export default {
   border-left: 3px solid rgb(212, 166, 150);
 }
 .consult {
-  height: 100vh;
   margin-top: 100px;
   margin-bottom: 100px;
   color: #ffff;
-  background: #1a1a3b;
+  background: rgb(212, 166, 150);
 }
 .writting2 {
-  color: rgba(138, 136, 136, 0.6);
+  color: #24232399;
   font-size: 15px;
 }
 .leaders {

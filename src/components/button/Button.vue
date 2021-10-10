@@ -1,5 +1,7 @@
 <template>
-  <button class="bttn " type="submit">{{ text }}</button>
+  <button :style="{ background: color }" class="bttn " type="submit">
+    {{ text }}
+  </button>
 </template>
 
 <script>
@@ -7,6 +9,10 @@ export default {
   name: "Input",
   props: {
     text: String,
+    color: {
+      type: String,
+      default: "rgb(212, 166, 150)",
+    },
   },
 };
 </script>

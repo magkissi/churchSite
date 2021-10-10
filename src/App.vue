@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <div class="nav"><NavBar /></div>
+    <div class="nav">
+      <div v-if="smallScreen"><SmallScreenNav /></div>
+
+      <div v-if="bigScreen"><NavBar /></div>
+    </div>
+
     <router-view />
 
     <div><Footer /></div>
@@ -9,13 +14,30 @@
 
 <script>
 import Footer from "./components/footer/Footer.vue";
+import SmallScreenNav from "./components/navbar/SmallScreenNav.vue";
 import NavBar from "./components/navbar/NavBar.vue";
 
 export default {
   name: "App",
   components: {
-    NavBar,
+    SmallScreenNav,
     Footer,
+    NavBar,
+  },
+  data() {
+    return {
+      bigScreen: false,
+    };
+  },
+  created() {
+    this.handleView();
+    window.addEventListener("resize", this.handleView);
+  },
+  methods: {
+    handleView() {
+      this.smallScreen = window.innerWidth <= 990;
+      this.bigScreen = !this.bigScreen;
+    },
   },
 };
 </script>
@@ -26,6 +48,16 @@ export default {
     width: 100%;
   }
 }
+/* @media screen and (max-width: 731px) {
+  .bigNav {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .smallNav {
+    display: none;
+  }
+} */
 #app {
   position: relative;
   font-family: Avenir, Helvetica, Arial, sans-serif;

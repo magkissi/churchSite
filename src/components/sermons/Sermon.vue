@@ -1,12 +1,12 @@
 <template>
-  <div class="container w-40 h-auto">
-    <img class="h-32 w-full mb-2" :src="src" :alt="alt" />
+  <div class="container w-40 h-auto lg:w-72 lg:h-96">
+    <img class="h-32 w-full mb-2 lg:h-48" :src="src" :alt="alt" />
 
-    <div class="ml-2 text-sm mt-2 mb-2 lg:text-2xl">{{ title }}</div>
+    <div class="ml-2 text-sm mt-2 mb-2 lg:text-2xl lg:mb-11">{{ title }}</div>
     <div class="border ml-28"></div>
     <div class="w-16 ml-2 mb-5 h-7"><Button text="view" /></div>
     <strong
-      ><p class="ml-2 text-xs">{{ date }}</p></strong
+      ><p class="ml-2 text-xs lg:mt-12">{{ date }}</p></strong
     >
   </div>
 </template>
