@@ -8,8 +8,11 @@
         :loop="true"
         :speed="800"
       >
+        <div v-if="heroes && heroes.length == 0" class="h-screen text-center">
+          Page loading
+        </div>
         <slide class="slide" v-for="hero in heroes" :key="hero.id">
-          <img :src="hero.background.url" />
+          <img class="w-full h-screen" :src="hero.background.url" />
           <div class="overlay pl-3 lg:pl-80">
             <div class="text-xl font-bold lg:text-3xl">{{ hero.title }}</div>
             <div class="text-sm lg:text-xl">{{ hero.subtitle }}</div>
@@ -48,10 +51,6 @@ export default {
 </script>
 
 <style scoped>
-img {
-  width: 100%;
-  height: 100vh;
-}
 .overlay {
   position: absolute;
   top: 0;

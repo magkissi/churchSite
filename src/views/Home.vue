@@ -171,14 +171,14 @@ export default {
   height: 100vh;
 }
 .h-line {
-  border-top: 1px solid rgb(138, 136, 136);
-  border-bottom: 1px solid rgb(138, 136, 136);
+  border-top: 1px solid rgba(138, 136, 136, 0.3);
+  border-bottom: 1px solid rgba(138, 136, 136, 0.3);
   margin-top: 100px;
   height: 500px;
 }
 .v-line {
-  border-left: 1px solid rgb(138, 136, 136);
-  border-right: 1px solid rgb(138, 136, 136);
+  border-left: 1px solid rgba(138, 136, 136, 0.3);
+  border-right: 1px solid rgba(138, 136, 136, 0.3);
   margin-left: 300px;
   margin-right: 300px;
 }

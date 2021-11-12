@@ -5,7 +5,7 @@
       ' h-24 text-white pt-10 flex w-full',
     ]"
   >
-    <div class="resize-logo flex items-center ml-10 mb-5">
+    <div class="flex items-center ml-10 mb-5">
       <img class="w-10 h-10" src="/img/logo.png" />
       <span class="text-sm ml-1">
         <p class="text-lg font-bold">LEGON</p>
@@ -14,24 +14,23 @@
       </span>
     </div>
     <div>
-      <div>
+      <div class="ml-32">
         <img
           @click="handleClick"
-          class="w-8 ml-32 cursor-pointer"
+          class="w-8 cursor-pointer"
           src="/img/menu.png"
           alt=""
         />
       </div>
       <div
         v-if="showNavItems"
-        class="bg-gray-200 w-screen flex mt-12 text-xs font-bold text-black"
+        class="bg-gray-200 w-auto flex mt-12 text-xs font-bold text-black pt-3 pl-2"
+        @mouseleave="showNavItems = false"
       >
-        <router-link to="/"
-          ><div class="resize-text pb-5">HOME</div></router-link
-        >
+        <router-link to="/"><div class="">HOME</div></router-link>
 
         <div
-          class="resize-text flex flex-col ml-5 mr-5 relative pb-5"
+          class="flex flex-col ml-5 mr-5 relative"
           @mouseover="details1 = true"
           @mouseleave="details1 = false"
         >
@@ -39,59 +38,69 @@
             ABOUT US +
           </div>
 
-          <span v-show="details1" class=" mt-14 absolute">
+          <span v-show="details1" class=" mt-8 absolute">
             <Modal
               item1="History"
               item2="Fundamental Belifs"
               item3="Core Values"
-              item4="Statistics"
-              item5="Activities"
+              item4="Activities"
+              path1="/About"
+              path2="/Beliefs"
+              path3="/Values"
+              path4="/Activities"
             />
           </span>
         </div>
 
         <div
-          class="resize-text flex flex-col relative pb-5"
+          class=" flex flex-col relative cursor-pointer pb-5"
           @mouseover="details2 = true"
           @mouseleave="details2 = false"
         >
           LEADERSHIP +
-          <span class="mt-14 absolute" v-show="details2">
+          <span class="mt-8 absolute" v-show="details2">
             <Modal
               item1="General Conference"
               item2="Union"
               item3="District"
               item4="Local"
+              path1="/conference"
+              path2="/conference"
+              path3="/district"
+              path4="/local"
             />
           </span>
         </div>
         <div
-          class="resize-text flex flex-col relative ml-5 mr-5 pb-5"
+          class="flex flex-col relative ml-5 mr-5 cursor-pointer"
           @mouseover="details3 = true"
           @mouseleave="details3 = false"
         >
           MINISTRIES +
-          <span class="mt-14 absolute" v-show="details3">
+          <span class="mt-8 absolute" v-show="details3">
             <Modal
-              item1="Personal Ministry"
-              item2="Children"
-              item3="Sabbath School"
-              item4="Home and Family life"
-              item5="Youth Ministry"
-              item6="Women and ladies Ministry"
-              item7="Men's Ministry"
+              item1="Children"
+              item2="Home and Family life"
+              item3="Youth "
+              item4="Women and ladies"
+              item5="Men"
+              path1="/children"
+              path2="/familyLife"
+              path3="/youth"
+              path4="/women&ladies"
+              path5="/men"
             />
           </span>
         </div>
 
-        <div
-          class="resize-text flex flex-col relative ml-5 mr-5 pb-5"
-          @mouseover="details3 = true"
-          @mouseleave="details3 = false"
+        <router-link to="/media"
+          ><div>
+            MEDIA +
+          </div></router-link
         >
-          MEDIA +
-        </div>
-        <div class="ml-5 mr-5 pb-5">CONTACT US +</div>
+        <router-link to="/contact">
+          <div class="ml-5 mr-5">CONTACT US +</div></router-link
+        >
       </div>
     </div>
   </div>
@@ -112,6 +121,7 @@ export default {
       details1: false,
       details2: false,
       details3: false,
+      details4: false,
     };
   },
   mounted() {

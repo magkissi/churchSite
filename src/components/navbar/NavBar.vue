@@ -30,8 +30,11 @@
             item1="History"
             item2="Fundamental Belifs"
             item3="Core Values"
-            item4="Statistics"
-            item5="Activities"
+            item4="Activities"
+            path1="/About"
+            path2="/Beliefs"
+            path3="/Values"
+            path4="/Activities"
           />
         </span>
       </div>
@@ -48,6 +51,10 @@
             item2="Union"
             item3="District"
             item4="Local"
+            path1="/conference"
+            path2="/conference"
+            path3="/district"
+            path4="/local"
           />
         </span>
       </div>
@@ -59,25 +66,28 @@
         MINISTRIES +
         <span class="mt-5 absolute" v-show="details3">
           <Modal
-            item1="Personal Ministry"
-            item2="Children"
-            item3="Sabbath School"
-            item4="Home and Family life"
-            item5="Youth Ministry"
-            item6="Women and ladies Ministry"
-            item7="Men's Ministry"
+            item1="Children"
+            item2="Home and Family life"
+            item3="Youth "
+            item4="Women and ladies"
+            item5="Men"
+            path1="/children"
+            path2="/familyLife"
+            path3="/youth"
+            path4="/women&ladies"
+            path5="/men"
           />
         </span>
       </div>
 
-      <div
-        class="resize-text flex flex-col relative ml-5 mr-5 pb-5"
-        @mouseover="details3 = true"
-        @mouseleave="details3 = false"
+      <router-link to="/media"
+        ><div class="pb-5">
+          MEDIA +
+        </div></router-link
       >
-        MEDIA +
-      </div>
-      <div class="ml-5 mr-5 pb-5">CONTACT US +</div>
+      <router-link to="/contact">
+        <div class="ml-5 mr-5 pb-5">CONTACT US +</div></router-link
+      >
     </div>
   </div>
 </template>

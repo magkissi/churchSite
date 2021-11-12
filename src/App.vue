@@ -26,7 +26,8 @@ export default {
   },
   data() {
     return {
-      bigScreen: false,
+      bigScreen: true,
+      smallScreen: false,
     };
   },
   created() {
@@ -35,8 +36,14 @@ export default {
   },
   methods: {
     handleView() {
-      this.smallScreen = window.innerWidth <= 990;
-      this.bigScreen = !this.bigScreen;
+      const screenSize = window.innerWidth <= 990;
+      if (screenSize) {
+        this.bigScreen = false;
+        this.smallScreen = true;
+      } else {
+        this.bigScreen = true;
+        this.smallScreen = false;
+      }
     },
   },
 };
@@ -48,16 +55,6 @@ export default {
     width: 100%;
   }
 }
-/* @media screen and (max-width: 731px) {
-  .bigNav {
-    display: none;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .smallNav {
-    display: none;
-  }
-} */
 #app {
   position: relative;
   font-family: Avenir, Helvetica, Arial, sans-serif;
